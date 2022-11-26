@@ -1,0 +1,13 @@
+#Defini et opére plusieurs conteneurs docker, allume tous les services sumiltanément
+
+version: "3.8"
+services:
+  backend:
+    image: "cchtanko/springboot-react-fullstack:4"
+    ports:
+      - "80:8080"
+    restart: "always"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+
+
