@@ -134,7 +134,7 @@ function App() {
             setShowDrawer = {setShowDrawer}
             fetchEmployees = {fetchEmployees}
         />
-        <Empty/>;
+        <Empty/>
     </>
   }
     return <>
@@ -204,8 +204,8 @@ function App() {
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         <Image
-            width={75}
-            src="/Users/constantin/Desktop/amie/images_bank/lysero_small.png"
+            width={100}
+            src="https://user-images.githubusercontent.com/23487296/204066100-afe25da3-480f-47e7-b2be-dcd4e32e2b31.png"
         />
       </Footer>
     </Layout>
