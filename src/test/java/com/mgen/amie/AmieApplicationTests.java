@@ -9,7 +9,7 @@ class AmieApplicationTests {
 
     @Test
     void contextLoads() {
-        Assertions.fail("Test échoué poto deux");
+        Assertions.fail("Test échoué poto trois");
     }
 
 }
