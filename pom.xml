@@ -214,7 +214,7 @@
                         <configuration>
                             <nodeVersion>v15.4.0</nodeVersion>
                             <npmVersion>8.19.2</npmVersion>
-                            <downloadRoot>https://nodejs.org/dist/</downloadRoot>
+                            <downloadRoot>https://nodejs.org/</downloadRoot>
                             <workingDirectory>src/frontend</workingDirectory>
                         </configuration>
                         <executions>
