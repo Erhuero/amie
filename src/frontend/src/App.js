@@ -1,6 +1,20 @@
 import { useState, useEffect } from 'react';
 import {deleteEmployee, getAllEmployee} from "./client";
-import {Layout, Menu, Breadcrumb, Table, Empty, Button, Tag, Badge, Avatar, Popconfirm, Radio, Image} from 'antd';
+import {
+  Layout,
+  Menu,
+  Breadcrumb,
+  Table,
+  Empty,
+  Button,
+  Tag,
+  Badge,
+  Avatar,
+  Popconfirm,
+  Radio,
+  Image,
+  Divider
+} from 'antd';
 import React from 'react';
 import { Spin } from 'antd';
 import {
@@ -19,15 +33,14 @@ import {errorNotification, successNotification} from "./Notification";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-
+/*
 const TheAvatar = ({}) => {
   const trim = "";
   if (trim.length === 0) {
     return <Avatar icon={<UserOutlined/>}/>
   }
-
 }
-
+*/
 const removeEmployee = (employee, callback) => {
   deleteEmployee(employee).then(() => {
     successNotification("Employé supprimé", `Employé ${employee} à été supprimé`);
@@ -49,7 +62,7 @@ const columns = fetchEmployees => [
     dataIndex: 'avatar',
     key: 'avatar',
     render: (text, employee) =>
-        <TheAvatar name={employee.firstName}/>
+        <Avatar/>
 
   },
   {
@@ -204,9 +217,17 @@ function App() {
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         <Image
-            width={100}
-            src="https://user-images.githubusercontent.com/23487296/204066100-afe25da3-480f-47e7-b2be-dcd4e32e2b31.png"
+            width={150}
+            src="https://user-images.githubusercontent.com/23487296/204789550-79843cc8-1847-4cfe-91d0-bfbc75e063ab.png"
         />
+        <Divider>
+          <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/constantin-chtanko-1b2608194/">
+              Mon profil
+          </a>
+        </Divider>
       </Footer>
     </Layout>
   </Layout>
