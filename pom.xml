@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>2.7.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mgen</groupId>
@@ -18,13 +18,11 @@
         <app.image.name>springboot-react-fullstack</app.image.name>
         <app.image.tag/>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -89,7 +87,6 @@
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
             <id>jib-push-to-dockerhub</id>
@@ -212,10 +209,10 @@
                         <groupId>com.github.eirslett</groupId>
                         <artifactId>frontend-maven-plugin</artifactId>
                         <!-- Use the latest released version:
-                                  https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
+                        https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
                         <version>1.11.2</version>
                         <configuration>
-                            <nodeVersion>v4.6.0</nodeVersion>
+                            <nodeVersion>v18.12.1</nodeVersion>
                             <workingDirectory>src/frontend</workingDirectory>
                         </configuration>
                         <executions>
@@ -225,8 +222,8 @@
                                     <goal>install-node-and-npm</goal>
                                 </goals>
                                 <configuration>
-                                    <nodeVersion>v15.4.0</nodeVersion>
-                                    <npmVersion>7.3.0</npmVersion>
+                                    <nodeVersion>v18.12.1</nodeVersion>
+                                    <npmVersion>9.1.2</npmVersion>
                                 </configuration>
                             </execution>
                             <execution>
@@ -250,7 +247,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-resources-plugin</artifactId>
+                        <version>3.3.0</version>
                         <executions>
                             <execution>
                                 <id>copy-build-folder</id>
