@@ -15,7 +15,7 @@ env:
   # Java
   JAVA_VERSION: 1.17
   # DockerHub
-  DOCKER_HUB_USERNAME: amigoscode
+  DOCKER_HUB_USERNAME: cchtanko
   # AWS & Elastic Bean Stalk
   AWS_REGION: eu-west-3
   EB_ENVIRONMENT_NAME: Lysero-env-1
@@ -40,7 +40,7 @@ jobs:
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          text: 'Pipeline CICD en cours de deploiement... :eyes::think:'
+          text: 'Pipeline CICD en cours de deploiement... :eyes: :think:'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
