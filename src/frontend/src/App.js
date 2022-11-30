@@ -9,7 +9,6 @@ import {
   Button,
   Tag,
   Badge,
-  Avatar,
   Popconfirm,
   Radio,
   Image,
@@ -56,7 +55,7 @@ const removeEmployee = (employee, callback) => {
   })
 }
 
-const columns = fetchEmployees => [
+const columns = fetchEmployees => [/*
   {
     title: '',
     dataIndex: 'avatar',
@@ -64,7 +63,7 @@ const columns = fetchEmployees => [
     render: (text, employee) =>
         <Avatar/>
 
-  },
+  },*/
   {
   title: "Identifiant",
   dataIndex:"id",
