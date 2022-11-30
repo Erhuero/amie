@@ -222,7 +222,7 @@ function App() {
         />
         <Divider>
           <a
-              rel="noopener norefer"
+              rel="noopener noreferrer"
               target="_blank"
               href="https://www.linkedin.com/in/constantin-chtanko-1b2608194/">
               Mon profil
