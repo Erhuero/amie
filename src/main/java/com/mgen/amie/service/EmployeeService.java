@@ -1,6 +1,5 @@
 package com.mgen.amie.service;
 
-
 import com.mgen.amie.entity.EmployeeEntity;
 import com.mgen.amie.exception.BadRequestException;
 import com.mgen.amie.model.Employee;
@@ -8,7 +7,6 @@ import com.mgen.amie.repository.EmployeeRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +33,9 @@ public class EmployeeService {
 
     public String addEmployee(EmployeeEntity employee) {
         try {
-            if (!employeeRepository.existsByFirstNameAndLastName(employee.getFirstName(), employee.getLastName())) {
+            if (!employeeRepository.existsByFirstNameAndLastName(
+                    employee.getFirstName(),
+                    employee.getLastName())) {
                 employeeRepository.save(employee);
                 return "Employé ajouté avec succés";
             } else {
@@ -48,7 +48,9 @@ public class EmployeeService {
 
     public String deleteEmployee(EmployeeEntity employee) {
         try {
-            if (employeeRepository.existsByFirstNameAndLastName(employee.getFirstName(), employee.getLastName())
+            if (employeeRepository.existsByFirstNameAndLastName(
+                    employee.getFirstName(),
+                    employee.getLastName())
                     || employeeRepository.existsById(employee.getId())) {
                 employeeRepository.delete(employee);
                 return "Employé supprimé avec succès";
