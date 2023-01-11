@@ -1,6 +1,5 @@
 package com.mgen.amie.model;
 
-
 public class Employee {
 
     public int id;
