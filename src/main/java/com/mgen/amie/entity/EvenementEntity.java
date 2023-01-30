@@ -3,6 +3,7 @@ package com.mgen.amie.entity;
 import javax.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -85,13 +86,13 @@ public class EvenementEntity {
 
     @Column(
             name = "lien_ressources",
-            nullable = false,
+            nullable = true,
             columnDefinition = "TEXT"
     )
     private String lien_ressources;
 
     @Column(name = "image",
-            nullable = false,
+            nullable = true,
             columnDefinition = "BYTEA")
     private byte[] image;
 
@@ -107,7 +108,7 @@ public class EvenementEntity {
 
     private LieuEntity lieuEntity;
 
-    public EvenementEntity() {
+    public EvenementEntity(String title, String sentence, String date_debut, String date_fin, LocalTime now, String heure_debut, String url, String lien_replay, Object lien_ressources, Object image) {
     }
     public EvenementEntity(String label,
                            String description,
@@ -129,6 +130,10 @@ public class EvenementEntity {
         this.lien_replay = lien_replay;
         this.lien_ressources = lien_ressources;
         this.image = image;
+    }
+
+    public EvenementEntity() {
+
     }
 
     public Long getIdEvenement() {

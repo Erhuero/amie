@@ -37,5 +37,4 @@ public class EmployeeController {
     public String deleteEmployee(@RequestBody EmployeeEntity employee){
         return employeeService.deleteEmployee(employee);
     }
-
 }

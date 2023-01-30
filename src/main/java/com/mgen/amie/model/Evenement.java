@@ -5,29 +5,43 @@ import java.time.LocalDateTime;
 public class Evenement {
 
     private Long idEvenement;
-
     private String label;
-
     private String description;
-
     private String date_debut;
-
     private String date_fin;
-
     private LocalDateTime dateCreationEvenement;
-
     private String heure_debut;
-
     private String heure_fin;
-
     private String lien_replay;
-
     private String lien_ressources;
-
     private byte[] image;
-
+    private Lieu lieuEntity;
 
     public Evenement() {
+    }
+
+    public Evenement(String label,
+                     String description,
+                     String date_debut,
+                     String date_fin,
+                     LocalDateTime dateCreationEvenement,
+                     String heure_debut,
+                     String heure_fin,
+                     String lien_replay,
+                     String lien_ressources,
+                     byte[] image,
+                     Lieu lieuEntity) {
+        this.label = label;
+        this.description = description;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+        this.dateCreationEvenement = dateCreationEvenement;
+        this.heure_debut = heure_debut;
+        this.heure_fin = heure_fin;
+        this.lien_replay = lien_replay;
+        this.lien_ressources = lien_ressources;
+        this.image = image;
+        this.lieuEntity = lieuEntity;
     }
 
     public Long getIdEvenement() {
@@ -116,5 +130,13 @@ public class Evenement {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public Lieu getLieuEntity() {
+        return lieuEntity;
+    }
+
+    public void setLieuEntity(Lieu lieuEntity) {
+        this.lieuEntity = lieuEntity;
     }
 }

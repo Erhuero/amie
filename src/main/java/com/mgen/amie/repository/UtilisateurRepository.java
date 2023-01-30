@@ -19,9 +19,14 @@ public interface UtilisateurRepository extends PagingAndSortingRepository<Utilis
     @Query("SELECT u FROM Utilisateur u WHERE u.nom = ?1")
     List<UtilisateurEntity> selectUtilisateurWhereNomEqual(String nom);
 
+    //expliquer le fonctionnement de @Transactional : https://www.baeldung.com/spring-transactional-propagation-isolation
     @Transactional
     @Modifying
     @Query("DELETE FROM Utilisateur u WHERE u.idUtilisateur=?1")
     int deleteUtilisateurByIdUtilisateur(Long idUtilisateur);
+
+    //trouver un utilisateur par son role
+    @Query("SELECT r FROM Role r WHERE r.idRole = ?1")
+    List<UtilisateurEntity> selectUtilisateurWhereRoleEqual(String role);
 
 }
