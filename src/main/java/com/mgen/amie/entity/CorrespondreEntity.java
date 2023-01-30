@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity(name = "Correspondre")
 @Table(name = "correspondre")
-public class Correspondre {
+public class CorrespondreEntity {
 
     @EmbeddedId
     private IdCorrespondre id;
@@ -31,10 +31,10 @@ public class Correspondre {
     )
     private TypologieEvenementsEntity typologieevenements;
 
-    public Correspondre() {
+    public CorrespondreEntity() {
     }
 
-    public Correspondre(EvenementEntity evenementEntity, TypologieEvenementsEntity typologieevenements) {
+    public CorrespondreEntity(EvenementEntity evenementEntity, TypologieEvenementsEntity typologieevenements) {
         this.evenementEntity = evenementEntity;
         this.typologieevenements = typologieevenements;
     }

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity(name = "Contribuer")
 @Table(name = "contribuer")
-public class Contribuer {
+public class ContribuerEntity {
 
     @EmbeddedId
     private idContribuer id;
@@ -53,12 +53,12 @@ public class Contribuer {
     )
     private LocalDateTime dateRefus;
 
-    public Contribuer(idContribuer id,
-                      UtilisateurEntity utilisateurEntity,
-                      EvenementEntity evenementEntity,
-                      LocalDateTime dateDemandeContribution,
-                      LocalDateTime dateValidationDemandeContribution,
-                      LocalDateTime dateRefus) {
+    public ContribuerEntity(idContribuer id,
+                            UtilisateurEntity utilisateurEntity,
+                            EvenementEntity evenementEntity,
+                            LocalDateTime dateDemandeContribution,
+                            LocalDateTime dateValidationDemandeContribution,
+                            LocalDateTime dateRefus) {
         this.id = id;
         this.utilisateurEntity = utilisateurEntity;
         this.evenementEntity = evenementEntity;
@@ -67,11 +67,11 @@ public class Contribuer {
         this.dateRefus = dateRefus;
     }
 
-    public Contribuer(UtilisateurEntity utilisateurEntity,
-                      EvenementEntity evenementEntity,
-                      LocalDateTime dateDemandeContribution,
-                      LocalDateTime dateValidationDemandeContribution,
-                      LocalDateTime dateRefus) {
+    public ContribuerEntity(UtilisateurEntity utilisateurEntity,
+                            EvenementEntity evenementEntity,
+                            LocalDateTime dateDemandeContribution,
+                            LocalDateTime dateValidationDemandeContribution,
+                            LocalDateTime dateRefus) {
         this.utilisateurEntity = utilisateurEntity;
         this.evenementEntity = evenementEntity;
         this.dateDemandeContribution = dateDemandeContribution;
@@ -79,7 +79,7 @@ public class Contribuer {
         this.dateRefus = dateRefus;
     }
 
-    public Contribuer() {
+    public ContribuerEntity() {
     }
 
     public idContribuer getId() {
@@ -132,7 +132,7 @@ public class Contribuer {
 
     @Override
     public String toString() {
-        return "Contribuer{" +
+        return "ContribuerEntity{" +
                 "id=" + id +
                 ", utilisateurEntity=" + utilisateurEntity +
                 ", evenementEntity=" + evenementEntity +

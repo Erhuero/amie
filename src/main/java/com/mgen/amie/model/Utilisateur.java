@@ -1,6 +1,7 @@
 package com.mgen.amie.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Utilisateur {
 
@@ -65,5 +66,29 @@ public class Utilisateur {
 
     public void setDateDerniereInitialisationMotDePasse(LocalDateTime dateDerniereInitialisationMotDePasse) {
         this.dateDerniereInitialisationMotDePasse = dateDerniereInitialisationMotDePasse;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Utilisateur that = (Utilisateur) o;
+        return Objects.equals(idUtilisateur, that.idUtilisateur) &&
+                Objects.equals(prenom, that.prenom) &&
+                Objects.equals(nom, that.nom) &&
+                Objects.equals(mail, that.mail) &&
+                Objects.equals(motDePasse, that.motDePasse) &&
+                Objects.equals(dateDerniereInitialisationMotDePasse, that.dateDerniereInitialisationMotDePasse);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                idUtilisateur,
+                prenom,
+                nom,
+                mail,
+                motDePasse,
+                dateDerniereInitialisationMotDePasse);
     }
 }
