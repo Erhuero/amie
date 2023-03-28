@@ -59,7 +59,25 @@ public class CorrespondreEntity {
         return typologieevenements;
     }
 
-    public void setTypologieevenements(TypologieEvenementsEntity typologieevenements) {
+    public void setTypologieEvenements(TypologieEvenementsEntity typologieevenements) {
         this.typologieevenements = typologieevenements;
     }
+
+    public EvenementEntity getEvenementEntity() {
+        return evenementEntity;
+    }
+
+    public void setEvenementEntity(EvenementEntity evenementEntity) {
+        this.evenementEntity = evenementEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "CorrespondreEntity{" +
+                "id=" + id +
+                ", evenementEntity=" + evenementEntity +
+                ", typologieevenements=" + typologieevenements +
+                '}';
+    }
+
 }

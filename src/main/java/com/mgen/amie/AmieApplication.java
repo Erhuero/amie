@@ -15,6 +15,7 @@ import com.mgen.amie.model.Lieu;
 import com.mgen.amie.repository.EvenementRepository;
 import com.mgen.amie.repository.UtilisateurRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -29,13 +30,16 @@ public class AmieApplication {
 
     public static void main(String[] args) {SpringApplication.run(AmieApplication.class, args);}
 
-
     @Bean
     CommandLineRunner commandLineRunner(EvenementRepository evenementRepository, UtilisateurRepository utilisateurRepository) {
         return args -> {
             Faker faker = new Faker();
             //genererEvenements(evenementRepository, faker);
-            genererUtilisateurs(utilisateurRepository, faker);
+            //genererUtilisateurs(utilisateurRepository, faker);
+            //genererRoles(roleRepository);
+            //genererUtilisateurs(utilisateurRepository);
+            //genererLieux(lieuRepository);
+            //genererTypologiesEvenements(typologieEvenementRepository);
         };
     }
 
@@ -68,5 +72,4 @@ public class AmieApplication {
             utilisateurRepository.save(utilisateurEntity);
         }
     }
-
 }

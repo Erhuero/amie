@@ -104,4 +104,5 @@ public class AttribuerEntity {
                 ", dateAttribution=" + dateAttribution +
                 '}';
     }
+
 }

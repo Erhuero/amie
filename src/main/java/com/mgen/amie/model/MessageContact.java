@@ -10,18 +10,20 @@ public class MessageContact {
     private String description;
     private LocalDateTime dateRedaction;
     private Utilisateur utilisateur;
+    private Utilisateur destinataire;
+    private int supprimerPar;
 
     public MessageContact() {
     }
 
-    public MessageContact(String objet,
-                          String description,
-                          LocalDateTime dateRedaction,
-                          Utilisateur utilisateur) {
+    public MessageContact(int idMessageContact, String objet, String description, LocalDateTime dateRedaction, Utilisateur utilisateur, Utilisateur destinataire, int supprimerPar) {
+        this.idMessageContact = idMessageContact;
         this.objet = objet;
         this.description = description;
         this.dateRedaction = dateRedaction;
         this.utilisateur = utilisateur;
+        this.destinataire = destinataire;
+        this.supprimerPar = supprimerPar;
     }
 
     public Long getIdMessageContact() {
@@ -74,6 +76,22 @@ public class MessageContact {
                 Objects.equals(description, that.description) &&
                 Objects.equals(dateRedaction, that.dateRedaction) &&
                 Objects.equals(utilisateur, that.utilisateur);
+    }
+
+    public Utilisateur getDestinataire() {
+        return destinataire;
+    }
+
+    public void setDestinataire(Utilisateur destinataire) {
+        this.destinataire = destinataire;
+    }
+
+    public int getSupprimerPar() {
+        return supprimerPar;
+    }
+
+    public void setSupprimerPar(int supprimerPar) {
+        this.supprimerPar = supprimerPar;
     }
 
     @Override

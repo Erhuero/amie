@@ -22,4 +22,14 @@ public interface EvenementRepository extends PagingAndSortingRepository<Evenemen
     @Modifying
     @Query("DELETE FROM Evenement e WHERE e.idEvenement = ?1")
     int deleteEvenementByIdEvenement(Long idEvenement);
+
+    int deleteEvenementByIdEvenement(int idEvenement);
+
+
+    List<EvenementEntity> findAllByUtilisateurEntity(UtilisateurEntity utilisateur);
+
+    List<EvenementEntity> findByUtilisateurEntity(UtilisateurEntity utilisateur);
+
+    Optional<EvenementEntity> findByIdEvenementAndUtilisateurEntity_IdUtilisateur(int idEvenement, int idUtilisateur);
+
 }

@@ -92,6 +92,10 @@ public class FAQEntity {
         this.utilisateurEntity = utilisateurEntity;
     }
 
+    public UtilisateurEntity getUtilisateurEntity() {
+        return utilisateurEntity;
+    }
+
     @Override
     public String toString() {
         return "FAQEntity{" +
@@ -101,4 +105,5 @@ public class FAQEntity {
                 ", utilisateurEntity=" + utilisateurEntity +
                 '}';
     }
+
 }
