@@ -1,7 +1,6 @@
 package com.mgen.amie.entity;
 
 import javax.persistence.*;
-
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -248,4 +247,6 @@ public class EvenementEntity {
                 ", image=" + Arrays.toString(image) +
                 '}';
     }
+
+
 }

@@ -1,12 +1,22 @@
 package com.mgen.amie.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+@Data
+@Builder
+@AllArgsConstructor
 @Entity(name = "Utilisateur")
 @Table(
         name = "utilisateur",
@@ -15,7 +25,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
                         columnNames = "mail")
         }
 )
-public class UtilisateurEntity {
+public class UtilisateurEntity implements UserDetails {
 
     @Id
     @SequenceGenerator(
@@ -81,8 +91,16 @@ public class UtilisateurEntity {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<MessageContactEntity> messagesContact = new ArrayList<>();
+    private final List<MessageContactEntity> messagesContact = new ArrayList<>();
 
+    /*
+    @OneToMany(
+            mappedBy = "destinataire",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL
+    )
+    private List<MessageContactEntity> messagesRecus = new ArrayList<>();
+*/
     public UtilisateurEntity() {
     }
 
@@ -175,5 +193,40 @@ public class UtilisateurEntity {
                 ", dateDerniereInitialisationMotDePasse=" + dateDerniereInitialisationMotDePasse +
                 ", dateDerniereConnexion=" + dateDerniereConnexion +
                 '}';
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 }

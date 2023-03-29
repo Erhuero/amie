@@ -1,7 +1,6 @@
 package com.mgen.amie.entity;
 
 import javax.persistence.*;
-
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -58,6 +57,20 @@ public class MessageContactEntity {
     )
     private UtilisateurEntity utilisateurEntity;
 
+    /*
+    //ceci est une tentative de faire une relation bidirectionnelle entre messagecontact et utilisateur
+    //pour le destinataire mais c'est une evolution
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(
+            name = "idUtilisateurDestinataire",
+            referencedColumnName = "idUtilisateur",
+            foreignKey = @ForeignKey(
+                    name = "utilisateur_message_contact_destinataire_fk"
+            )
+    )
+    private UtilisateurEntity destinataire;
+*/
+
     public MessageContactEntity() {
     }
 
@@ -110,4 +123,13 @@ public class MessageContactEntity {
                 ", dateRedaction=" + dateRedaction +
                 '}';
     }
+
+    public UtilisateurEntity getUtilisateurEntity() {
+        return utilisateurEntity;
+    }
+
+    public void setUtilisateurEntity(UtilisateurEntity utilisateurEntity) {
+        this.utilisateurEntity = utilisateurEntity;
+    }
+
 }

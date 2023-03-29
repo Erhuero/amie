@@ -60,4 +60,5 @@ public class TypologieEvenementsEntity {
                 ", label=" + label +
                 '}';
     }
+
 }
