@@ -4,8 +4,6 @@ import com.mgen.amie.dto.*;
 import com.mgen.amie.entity.AttribuerEntity;
 import com.mgen.amie.entity.FAQEntity;
 import com.mgen.amie.entity.UtilisateurEntity;
-import com.mgen.amie.model.FAQ;
-import com.mgen.amie.model.Utilisateur;
 import com.mgen.amie.repository.AttribuerRepository;
 import com.mgen.amie.repository.FAQRepository;
 import com.mgen.amie.repository.UtilisateurRepository;
@@ -16,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class FAQService {

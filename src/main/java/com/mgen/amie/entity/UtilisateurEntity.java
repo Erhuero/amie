@@ -91,7 +91,7 @@ public class UtilisateurEntity implements UserDetails {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<MessageContactEntity> messagesContact = new ArrayList<>();
+    private final List<MessageContactEntity> messagesContact = new ArrayList<>();
 
     /*
     @OneToMany(

@@ -75,7 +75,6 @@ public class LieuService {
         }
     }
 
-
     public String deleteLieu(int idLieu) {
         try {
             Optional<LieuEntity> optionalLieuEntity = lieuRepository.findById(idLieu);

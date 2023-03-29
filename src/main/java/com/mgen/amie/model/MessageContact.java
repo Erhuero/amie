@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class MessageContact {
 
-    private Long idMessageContact;
+    private int idMessageContact;
     private String objet;
     private String description;
     private LocalDateTime dateRedaction;
@@ -26,11 +26,11 @@ public class MessageContact {
         this.supprimerPar = supprimerPar;
     }
 
-    public Long getIdMessageContact() {
+    public int getIdMessageContact() {
         return idMessageContact;
     }
 
-    public void setIdMessageContact(Long idMessageContact) {
+    public void setIdMessageContact(int idMessageContact) {
         this.idMessageContact = idMessageContact;
     }
 

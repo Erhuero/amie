@@ -8,6 +8,8 @@ import com.mgen.amie.entity.AttribuerEntity;
 import com.mgen.amie.entity.RoleEntity;
 import com.mgen.amie.entity.UtilisateurEntity;
 import com.mgen.amie.model.Utilisateur;
+import com.mgen.amie.repository.AttribuerRepository;
+import com.mgen.amie.repository.RoleRepository;
 import com.mgen.amie.repository.UtilisateurRepository;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
